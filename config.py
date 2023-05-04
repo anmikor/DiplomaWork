@@ -1,0 +1,13 @@
+group_token = 'vk1.a.Lr----SRjA'
+user_token = 'vk1.a.F------PA'
+service_key = '7819---'
+group_id = 21**9
+client_id = 51**6
+user_id = 119**7
+SQLsystem = 'postgresql'
+login = 'postgres'
+password = '****'
+host = 'localhost'
+port = 5432
+db_name = "diplom_Vkinder"
+DSN = f'{SQLsystem}://{login}:{password}@{host}:{port}/{db_name}'
