@@ -76,8 +76,7 @@ class BotInterface:
                 client = tools.get_profile_info(peer_id)[0]
                 print(client)
 
-                start_data = search_params(client)  # 'Получение анкетных данных для поиск в список len=5'
-                self_user_data.sex = start_data[2]
+                self_user_data.getlist = search_params(client)  # 'Получение анкетных данных для поиск в список len=5'
 
                 if msg_to_me == 'привет':
                     
@@ -98,8 +97,6 @@ class BotInterface:
                                                    f'которые вы указали на странице ВК, \n '
                                                    f'введите: поиск \n')
                 elif msg_to_me == 'поиск':
-                    self_user_data.getlist = start_data
-
                     if self_user_data.town == 0 or self_user_data.age_from == 0:
 
                         self.message_send(peer_id, f'Для поиска недостаточно данных.\n'
