@@ -4,4 +4,4 @@
 <p>В файле botinterface код работы чат-бота ВК</p>
 <p>Файл для хранения токенов и паролей - config.py</p>
 <p>10.05.2023г.</p> <p>Дописаны аттрибуты и функции класса NewData, упрощена функция handler</p>
-<p> и добавлены функции profiles_manager и finder</p>
+<p> и добавлены функции profiles_manager и finder вместо одной функции sender</p>
