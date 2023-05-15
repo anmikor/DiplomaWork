@@ -5,7 +5,7 @@ from bd import extract_from_db, add_to_table, create_tables
 import sqlalchemy as sq
 from sqlalchemy.orm import sessionmaker
 from my_cod import search_params, VkTools
-from config import user_token, group_token
+from config import user_token, group_token, DSN
 
 tools = VkTools(user_token)
 
@@ -156,16 +156,16 @@ class BotInterface:
         """ Выполняет поиск и
             Формирует список профилей, не добавленных в базу данных
         """
-        if len(self.profiles_list) == 0:
-            profiles_list = tools.find_users(data, offset=offset)
-            for profile in profiles_list:
-                info_db = extract_from_db(session, profile['id'])
-                if info_db == 1:
-                    continue
-                elif info_db == 0:
-                    self.profiles_list.append(profile)
-        else:
-            pass
+            if len(self.profiles_list) == 0:
+                profiles_list = tools.find_users(data, offset=offset)
+                for profile in profiles_list:
+                    info_db = extract_from_db(session, profile['id'])
+                    if info_db == 1:
+                        continue
+                    elif info_db == 0:
+                        self.profiles_list.append(profile)
+            else:
+                pass
 
     def profiles_manager(self, peer_id):
         """ Если сформированный список профилей пустой,
